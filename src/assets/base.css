@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply bg-neutral-100 dark:bg-neutral-900;
+  @apply text-neutral-900 dark:text-neutral-100 font-sans;
+  @apply antialiased;
+  font-size: 16px;
+  line-height: 1.5;
+  scrollbar-color: theme('colors.neutral.500') theme('colors.neutral.100');
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  @apply mr-2;
+  &-track {
+    @apply bg-neutral-100 dark:bg-neutral-900;
+  }
+  &-thumb {
+    @apply bg-neutral-500 border border-neutral-100 dark:border-neutral-900 border-solid;
+    border-radius: 10px;
+  }
+}
+
+@media (preferred-color-scheme: dark) {
+  html {
+    scrollbar-color: theme('colors.neutral.500') theme('colors.neutral.900');
+  }
+}
